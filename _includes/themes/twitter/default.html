@@ -30,6 +30,10 @@
     <link href="{{ BASE_PATH }}{{ site.JB.atom_path }}" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
     <link href="{{ BASE_PATH }}{{ site.JB.rss_path }}" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
 
+    {% for css in page.css %}
+      <link href="{{ css }}" type="text/css" rel="stylesheet">
+    {% endfor %}
+
   </head>
 
   <body>
@@ -54,13 +58,16 @@
       <hr>
       <footer>
         <p>&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}
-          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
-          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
         </p>
       </footer>
 
     </div>
 
     {% include JB/analytics %}
+    
+    {% for js in page.js %}
+      <script type="text/javascript" src="{{ js }}"></script>
+    {% endfor %}
+
   </body>
 </html>
