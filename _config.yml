@@ -14,9 +14,6 @@ tagline: Site Tagline
 author :
   name : 智融均策管理咨询（北京）有限公司
   email : 113927088@qq.com
-  github : username
-  twitter : username
-  feedburner : feedname
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt 
