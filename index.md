@@ -3,7 +3,6 @@ layout: index
 title: Hello!
 tagline: 我们是智融均策
 css: [
-	assets/css/bootstrap.css,
 	assets/css/bootstrap-responsive.css,
 	assets/css/main.css
 ]
