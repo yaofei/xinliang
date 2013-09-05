@@ -14,7 +14,3 @@ js: [
 ]
 ---
 {% include JB/setup %}
-
-
-
-
