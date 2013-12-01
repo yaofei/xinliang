@@ -15,9 +15,11 @@
     <![endif]-->
 
     <!-- Le styles -->
-    <link href="{{ ASSET_PATH }}/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="{{ ASSET_PATH }}/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
-
+    <link href="{{ BASE_PATH }}/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="{{ BASE_PATH }}{{ ASSET_PATH }}/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+    <link href="{{ BASE_PATH }}/assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="{{ BASE_PATH }}/assets/css/main.css" rel="stylesheet" type="text/css" media="all">
+	
     <!-- Le fav and touch icons -->
   <!-- Update these with your own images
     <link rel="shortcut icon" href="images/favicon.ico">
@@ -31,23 +33,21 @@
     <link href="{{ BASE_PATH }}{{ site.JB.rss_path }}" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
 
     {% for css in page.css %}
-      <link href="{{ css }}" type="text/css" rel="stylesheet">
+      <link href="{{ BASE_PATH }}{{ css }}" type="text/css" rel="stylesheet">
     {% endfor %}
 
   </head>
 
-  <body>{{ BASE_PATH }}<br>{{ ASSET_PATH }}
-	  <div>
-		  REOIJWOIFJEW
-	  </div>
+  <body>
     <div class="navbar ">
       <div class="navbar-inner">
         <div class="container-narrow">
-          <a class="brand" href="{{ HOME_PATH }}">{{ site.title }}</a>
-          <ul class="nav">
-            {% assign pages_list = site.pages %}
-            {% assign group = 'navigation' %}
-            {% include JB/pages_list %}
+          <a class="brand" href="{{ HOME_PATH }}"><img border="0" src="/assets/img/newlogo.png" alt="{{site.title}}" title="logo" /></a>
+          <ul id="nav-top" class="nav pull-right">
+	      	<li><a href="{{ BASE_PATH }}/">首页</a></li>
+	      	<li><a href="{{ BASE_PATH }}/service.html">服务</a></li>
+	      	<li><a href="{{ BASE_PATH }}/cases.html">案例</a></li>
+	      	<li><a href="{{ BASE_PATH }}/aboutus.html">关于我们</a></li>
           </ul>
         </div>
       </div>
@@ -60,16 +60,21 @@
       </div>
       <hr>
       <footer>
-        <p>&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}
+        <p>&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}<br>
+			京ICP备13046215
         </p>
       </footer>
 
     </div>
 
     {% include JB/analytics %}
-    
+
+    <script type="text/javascript" src="{{ BASE_PATH }}/assets/js/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="{{ BASE_PATH }}/assets/js/bootstrap.js"></script>
+    <script type="text/javascript" src="{{ BASE_PATH }}/assets/js/application.js"></script>
+
     {% for js in page.js %}
-      <script type="text/javascript" src="{{ js }}"></script>
+      <script type="text/javascript" src="{{ BASE_PATH }}{{ js }}"></script>
     {% endfor %}
 
   </body>
